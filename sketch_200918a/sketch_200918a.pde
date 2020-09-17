@@ -13,30 +13,48 @@ public class Ball{
     circle(position_x,position_y,size); 
   }
   
+  public void changeColor_ball(){
+    delay(60);
+    fill(random(0,255), random(0,255), random(0,255));
+    input = " " ;
+  }
+  
+  public void move_leftRight(){
+    delay(60);
+    position_x = position_x+unit;
+    input = " ";
+    unit = 0 ;
+  }
+   public void move_upDown(){
+    delay(60);
+    position_y = position_y+unit;
+    input = " ";
+    unit = 0 ;
+  }
   
   public void set_ball(){
      if(keyPressed){
         if (key == 'w' && input == " "){
           unit = -10;
-          
+          move_upDown();
         }
         
         else if (key == 's' && input == " "){
           unit = 10;
-          
+          move_upDown();
         }
   
         else if (key == 'a' && input == " "){
           unit = -10;
-          
+          move_leftRight();
         }
         else if (key == 'd' && input == " "){
           unit = 10;
-          
+          move_leftRight();
         }
         
         else if (key == 'r' && input == " "){
-          
+          changeColor_ball();
           
         }
   
