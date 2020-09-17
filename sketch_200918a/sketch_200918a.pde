@@ -12,7 +12,36 @@ public class Ball{
   public void draw_ball(){
     circle(position_x,position_y,size); 
   }
-
+  
+  
+  public void set_ball(){
+     if(keyPressed){
+        if (key == 'w' && input == " "){
+          unit = -10;
+          
+        }
+        
+        else if (key == 's' && input == " "){
+          unit = 10;
+          
+        }
+  
+        else if (key == 'a' && input == " "){
+          unit = -10;
+          
+        }
+        else if (key == 'd' && input == " "){
+          unit = 10;
+          
+        }
+        
+        else if (key == 'r' && input == " "){
+          
+          
+        }
+  
+     }
+  }
 }
 Ball ball ;
 void setup(){
@@ -22,5 +51,6 @@ void setup(){
 void draw(){
   background(#C4F9FF);
   ball.draw_ball();
+  ball.set_ball();
 
 }
