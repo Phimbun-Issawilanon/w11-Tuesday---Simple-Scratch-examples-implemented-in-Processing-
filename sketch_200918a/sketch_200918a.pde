@@ -1,7 +1,7 @@
 public class Ball{
   float position_x,  position_y;
   float size;
-  float unit ;
+  float x, y;
   String input = " ";
   Ball(float pos_x, float pos_y, float size1){
     position_x = pos_x;
@@ -19,45 +19,34 @@ public class Ball{
     input = " " ;
   }
   
-  public void move_leftRight(){
+  public void move(int x, int y){
     delay(60);
-    position_x = position_x+unit;
+    position_x = position_x+x;
+    position_y = position_y+y;
     input = " ";
-    unit = 0 ;
-  }
-   public void move_upDown(){
-    delay(60);
-    position_y = position_y+unit;
-    input = " ";
-    unit = 0 ;
+    
   }
   
   public void set_ball(){
      if(keyPressed){
         if (key == 'w' && input == " "){
-          unit = -10;
-          move_upDown();
+          move(0,-10);
         }
         
         else if (key == 's' && input == " "){
-          unit = 10;
-          move_upDown();
+          move(0,10);
         }
   
         else if (key == 'a' && input == " "){
-          unit = -10;
-          move_leftRight();
+          move(-10,0);
         }
         else if (key == 'd' && input == " "){
-          unit = 10;
-          move_leftRight();
+          move(10,0);
         }
         
         else if (key == 'r' && input == " "){
           changeColor_ball();
-          
         }
-  
      }
   }
 }
